@@ -1,11 +1,11 @@
 module.exports = {
   presets: [
     [
-      'env',
+      '@babel/env',
       {
         loose: true,
         modules: false,
-        exclude: ['transform-es2015-typeof-symbol']
+        exclude: ['transform-typeof-symbol']
       }
     ]
   ],
