@@ -53,9 +53,7 @@
 .modal-dialog-centered {
   display: flex;
   align-items: center;
-  height: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
+  min-height: calc(100% - (#{$modal-dialog-margin} * 2));
 }
 
 // Actual modal
@@ -69,7 +67,7 @@
   background-color: $modal-content-bg;
   background-clip: padding-box;
   border: $modal-content-border-width solid $modal-content-border-color;
-  @include border-radius($border-radius-lg);
+  @include border-radius($modal-content-border-radius);
   @include box-shadow($modal-content-box-shadow-xs);
   // Remove focus outline from opened modal
   outline: 0;
@@ -98,7 +96,7 @@
   justify-content: space-between; // Put modal header elements (title and dismiss) on opposite ends
   padding: $modal-header-padding;
   border-bottom: $modal-header-border-width solid $modal-header-border-color;
-  @include border-top-radius($border-radius-lg);
+  @include border-top-radius($modal-content-border-radius);
 
   .close {
     padding: $modal-header-padding;
@@ -154,8 +152,7 @@
   }
 
   .modal-dialog-centered {
-    margin-top: 0;
-    margin-bottom: 0;
+    min-height: calc(100% - (#{$modal-dialog-margin-y-sm-up} * 2));
   }
 
   .modal-content {
